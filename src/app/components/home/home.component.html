@@ -3,7 +3,7 @@
   <hr>
 
 
-  <div class="card-columns" *ngIf = "videos.length > 0">
+  <div class="card-columns"  *ngIf = "videos.length > 0">
     <div class="card" *ngFor="let video of videos">
       <img class="card-img-top img-fluid" [src]="video.thumbnails.high.url"  alt="Card image cap">
       <div class="card-block">
@@ -24,7 +24,18 @@
   </button>
 
   <!-- Modal -->
-  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <!--Se añaden las propiedades al modal para que unicamente se cierre con el boton-->
+  <div class="modal fade"
+       id="myModal"
+       tabindex="-1"
+       role="dialog"
+       aria-labelledby="exampleModalLabel"
+       aria-hidden="true"
+
+      data-backdrop="static"
+       data-keyboard="false"
+  >
+
     <div class="modal-dialog" role="document">
       <div class="modal-content" *ngIf="videoSel">
         <div class="modal-header">
